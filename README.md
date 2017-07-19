@@ -1,4 +1,4 @@
-#Skeleton
+# Skeleton
 
 Skeleton is the boilerplate for quick rup-up any responsive project
 
