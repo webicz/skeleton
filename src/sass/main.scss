@@ -1,0 +1,13 @@
+// Bootstrap variables
+@import "libs/bootstrap-sass/bootstrap-custom.scss";
+@import "../libs/bootstrap-sass/assets/stylesheets/bootstrap/variables.scss";
+
+// General
+@import "general/variables.scss";
+@import "general/general.scss";
+
+// Partials
+@import "partials/header.scss";
+@import "partials/footer.scss";
+
+//Pages

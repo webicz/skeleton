@@ -1,0 +1,45 @@
+{
+  "name": "skeleton",
+  "description": "App skeleton for quick run up the app",
+  "main": "index.html",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "1",
+    "matchHeight": "matchheight#^0.7.2"
+  },
+  "install": {
+    "path": "dist/libs/",
+    "sources": {
+      "bootstrap-sass": {
+        "mapping": [
+          {
+            "src/libs/bootstrap-sass/assets/fonts/bootstrap/**": "fonts/bootstrap/"
+          }
+        ]
+      },
+      "jquery": {
+        "mapping": [
+          {
+            "src/libs/jquery/dist/jquery.min.js": "js/jquery.min.js"
+          }
+        ]
+      },
+      "matchHeight": {
+        "mapping": [
+          {
+            "src/libs/matchHeight/dist/jquery.matchHeight-min.js": "js/jquery.matchheight.min.js"
+          }
+        ]
+      }
+    }
+  }
+}
