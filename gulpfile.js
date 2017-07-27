@@ -45,9 +45,7 @@ gulp.task('sass', function() {
         .pipe(rename('main.css'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css/'))
-        .pipe(browserSync.reload({
-          stream: true
-        }));
+        .pipe(browserSync.stream());
 });
 
 // Creation of the sprite image
@@ -97,9 +95,7 @@ gulp.task('bootstrap_sass', function(){
 
     // Return a merged stream to handle both `end` events
     return merge(bootstrap, bootstrapTheme)
-        .pipe(browserSync.reload({
-          stream: true
-        }));
+        .pipe(browserSync.stream());
 });
 
 gulp.task("bootstrap_js", function(){
