@@ -15,6 +15,7 @@ var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 var sourcemaps = require('gulp-sourcemaps');
+var runSequence = require('run-sequence');
 
 var onError = function (err) {
   gutil.beep();
@@ -130,9 +131,13 @@ gulp.task("bootstrap_js", function(){
 
 gulp.task('bootstrap', ['bootstrap_sass','bootstrap_js']);
 
-gulp.task('watch', ['browserSync', 'sprite', 'sass'], function() {
+gulp.task('watch', ['browserSync'], function() {
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/sprite/**/*.png', ['sprite', 'sass']);
+
+    gulp.watch('src/sprite/**/*.png', function(){
+        runSequence('sprite', 'sass');
+    });
+
     gulp.watch('src/js/**/*.js', browserSync.reload);
     gulp.watch('*.html', browserSync.reload);
 
